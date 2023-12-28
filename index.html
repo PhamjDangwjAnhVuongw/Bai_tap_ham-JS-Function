@@ -1,94 +1,171 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Bài tập Hàm</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./CSS/style.css">
+<head>
+  <title>Bài tập chính JS</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-  <body>
-    
 
-    <!--! Bài tập 1: Quản lý tuyển sinh -->
-    <div class="container mt-5">
-        <div class="form">
-            <h3>Bài tập 1: Quản lý tuyển sinh</h3>
-        </div>
-        <form class="row align-items-center">
-            <div class="col-4 my-2">
-                <input type="number" class="form-control formText" id="diemChuan" placeholder="Nhập điểm chuẩn của hội đồng">
-            </div>
-            <div class="col-4 my-2">
-                <select class="form-control formText" name="" id="khuVuc">
-                    <option value = 0 >Khu vực ưu tiên</option>
-                    <option value = 2 >A (+2 điểm)</option>
-                    <option value = 1>B (+1 Điểm)</option>
-                    <option value = 0.5 >C (+0.5 Điểm)</option>
-                </select>
-            </div>
-            <div class="col-4 my-2">
-                <select class="form-control formText" name="" id="doiTuong">
-                    <option value= 0 >Chọn đối tượng</option>
-                    <option value= 2.5 >1 (+2.5 điểm)</option>
-                    <option value= 1.5 >2 (+1.5 Điểm)</option>
-                    <option value= 1 >3 (+1 Điểm)</option>
-                </select>
-            </div>
-
-            <div class="col-4 my-2">
-                <input type="number" class="form-control formText" id="diem1" placeholder="Điểm môn thứ 1">
-            </div>
-            <div class="col-4 my-2">
-                <input type="number" class="form-control formText" id="diem2" placeholder="Điểm môn thứ 2">
-            </div>
-            <div class="col-4 my-2">
-                <input type="number" class="form-control formText" id="diem3" placeholder="Điểm môn thứ 3">
-            </div>
-
-            <div class="col-12">
-                <button class="btn btn-success m-2" type="button" id="btnKetQuaDiem">Kiểm tra kết quả</button>
-            </div>
-
-            <div class="col-12 my-2 alert-success" role="alert">
-                Kết quả: <span id="ketQuaDiem"></span>
-            </div>
-        </form>
-    </div>
-      
-    <!--! Bài tập 2: Tính tiền điện -->
-
-
-
-
-
-
-
-
-    <!-- Bài tập 3: Tính thuế thu nhập cá nhân -->
-
-
-
-    <!-- Bài tập 4: Tính tiền cap -->
-
-
-
-
-
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<body>
   
-    <script src="./JS/main.js"></script>
+<h2 class="container text-center p-5">BÀI TẬP CHÍNH JAVASCRIPT 17/12/2023</h2>
+
+<!--! BÀI 1: TÍNH TIỀN LƯƠNG NHÂN VIÊN  -->
+<div class="container d-flex justify-content-center mb-5">
+    <div class="card w-50">
+      <div class="card-header bg-dark text-white">
+        <h5 class="text-center">1/Tính tiền lương nhân viên</h5>
+      </div>
+      <div class="card-body">
+        <p>Tiền lương 1 ngày:</p>
+        <span id="tienLuong1Ngay" class="form-control" w-25>100,000</span>
+      </div>
+      <div class="card-body">
+        <p>Số ngày làm:</p>
+        <input id="soNgayLam" class="form-control" w-25>
+      </div>
+      <br>
+      <button onclick="tinhTongLuong()" id="btnTongLuong" class="btn btn-success">Tính tiền</button>
+      <div class="mt-2 alert alert-success">
+        Kết quả : <span id="tongLuong"></span>
+      </div>
+    </div>
+  </div>
+
+<!--! BÀI 2: TÍNH GIÁ TRỊ TRUNG BÌNH  -->
+
+<div class="container d-flex justify-content-center mb-5">
+
+  <div class="card w-50">
+    <div class="card-header bg-dark text-white">
+      <h5 class="text-center">2/ Tính giá trị trung bình</h5>
+    </div>
+  
+    <div class="card-body d-flex">
+      <p>1:</p>
+      <input type="number" id="giaTri1" class="form-control"  >
+    </div>
+    <div class="card-body d-flex ">
+      <p>2:</p>
+      <input type="number" id="giaTri2" class="form-control" >
+    </div>
+    <div class="card-body d-flex">
+      <p>3:</p>
+      <input type="number" id="giaTri3" class="form-control" >
+    </div>
+    <div class="card-body d-flex ">
+      <p>4:</p>
+      <input type="number" id="giaTri4" class="form-control" >
+    </div>
+    <div class="card-body d-flex ">
+      <p>5:</p>
+      <input type="number" id="giaTri5" class="form-control" >
+    </div>
+    <br>
+    <button onclick="tinhTrungBinh()" id="btnTinhTrungBinh" class="btn btn-success">Tính giá trị trung bình</button>
+    <div class="mt-2 alert alert-success">
+      Kết quả : <span id="trungBinh"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--! BÀI 3: QUY ĐỔI TIỀN  -->
+<div class="container d-flex justify-content-center mb-5">
+  <div class="card w-50">
+    <div class="card-header bg-dark text-white">
+      <h5 class="text-center">3/ Quy đổi tiền</h5>
+    </div>
+    <div class="card-body">
+      <p>Giá USD mặc định: </p>
+      <span id="giaUSD" class="form-control" w-25>1USD = 23,500</span>
+    </div>
+    <div class="card-body">
+      <p>Nhập số tiền USD:</p>
+      <input type="number" id="soTienCanDoi" class="form-control" w-25>
+    </div>
+    <br>
+    <button onclick="quyDoiTien()" id="btnquyDoiTien" class="btn btn-success">Quy đổi tiền</button>
+    <div class="mt-2 alert alert-success">
+      Kết quả : <span id="ketQuaQuyDoi"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--! BÀI 4: TÍNH DIỆN TÍCH, CHU VI HÌNH CHỮ NHẬT  -->
+<div class="container d-flex justify-content-center mb-5">
+  <div class="card w-50">
+    <div class="card-header bg-dark text-white">
+      <h5 class="text-center">4/ Tính diện tích, chu vi hình chữ nhật</h5>
+    </div>
+    <div class="card-body">
+      <p>Nhập chiều dài: </p>
+      <input type="number" id="chieuDai" class="form-control">
+    </div>
+    <div class="card-body">
+      <p>Nhập chiều rộng: </p>
+      <input type="number" id="chieuRong" class="form-control">
+    </div>
+    <br>
+    <button onclick="tinhDienTichChuVi()" id="btnTinhDienTichChuVi" class="btn btn-success">Tính chu vi và diện tích</button>
+    <div class="mt-2 alert alert-success">
+      Kết quả : <span id="ketQuaTinh"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--! BÀI 5: TÍNH TỔNG 2 KÝ SỐ  -->
+<div class="container d-flex justify-content-center mb-5">
+  <div class="card w-50">
+    <div class="card-header bg-dark text-white">
+      <h5 class="text-center">5/ Tính tổng 2 ký số:</h5>
+    </div>
+    <div class="card-body">
+      <p>Mời nhập số: </p>
+      <input type="number" id="kySo" class="form-control">
+    </div>
+    <br>
+    <button onclick="tinhTongKySo()" id="btnTinhTongKySo" class="btn btn-success">Tính tổng ký số</button>
+    <div class="mt-2 alert alert-success">
+      Kết quả : <span id="tongKySo"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+
 </body>
+
 </html>
