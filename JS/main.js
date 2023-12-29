@@ -86,8 +86,6 @@ function tinhDienTichChuVi() {
 
 
 //! BÀI 5: TÍNH TỔNG 2 KÝ SỐ:
-
-
 function tinhTongKySo() {
     //Input:
     var kySo = document.getElementById('kySo').value;
