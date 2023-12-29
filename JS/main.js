@@ -41,7 +41,6 @@ function tinhTrungBinh() {
 }
 
 
-
 //! BÀI 3: QUY ĐỔI TIỀN:
 function quyDoiTien() {
     //Input:
@@ -57,9 +56,6 @@ function quyDoiTien() {
     document.getElementById('ketQuaQuyDoi').innerHTML = ketQuaQuyDoi.toLocaleString();
 
 }
-
-
-
 
 
 //! BÀI 4: TÍNH DIỆN TÍCH, CHU VI HÌNH CHỮ NHẬT:
